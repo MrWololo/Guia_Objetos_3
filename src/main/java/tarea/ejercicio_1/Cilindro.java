@@ -33,7 +33,7 @@ public class Cilindro extends Circulo {
 
     @Override
     public String toString() {
-        return "Cilindro: subclase de " + super.toString() + " altura='" + getAltura() + "'";
+        return "Cilindro: subclase de " + super.toString() + " altura='" + df.format(getAltura()) + "'";
     }
 
 }
