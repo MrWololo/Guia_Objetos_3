@@ -3,7 +3,7 @@ package tarea.ejercicio_1;
 import java.text.DecimalFormat;
 
 public class Circulo {
-    DecimalFormat df = new DecimalFormat("###.##");
+    public DecimalFormat df = new DecimalFormat("###.##");
 
     private double radio = 1.0;
     private String color = "rojo";

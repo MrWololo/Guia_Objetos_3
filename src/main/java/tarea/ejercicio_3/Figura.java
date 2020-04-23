@@ -2,7 +2,7 @@ package tarea.ejercicio_3;
 
 public abstract class Figura {
 
-    String color;
+    private String color;
 
     public Figura() {
     }

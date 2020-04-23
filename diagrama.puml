@@ -1,0 +1,207 @@
+@startuml diagrama
+
+left to right direction
+skinparam WrapWidth 300
+package Guia_3 {
+    class App {
+        {static}scan : Scanner
+        repeat : char
+        estudiantes : ArrayList
+        staff : ArrayList
+        personas : ArrayList
+        cantEst : int = 0
+        ingresos : double = 0
+        figuras : ArrayList
+        ejercicio : int
+        punto : int
+        {static}+main()
+    }
+    class VisualMenu {
+        {static}+principal()
+        {static}+ej1()
+        {static}+ej2()
+        {static}+ej3()
+    }
+
+    package ejercicio_1 {
+        class Cilindro {
+            -altura : double = 1.0
+            +<<constructor>> Cilindro()
+            +<<constructor>> Cilindro(radio : double, altura : double)
+            +<<constructor>> Cilindro(radio : double, color : String, altura : double)
+            +getAltura() : double
+            +getVolumen() : double
+            +getArea() : double
+            +toString() : String
+        }
+        class Circulo {
+            +df : DecimalFormat
+            -radio : double = 1.0
+            -color : string = "rojo"
+            area : double
+            +<<constructor>> Circulo()
+            +<<constructor>> Circulo(radio : double)
+            +<<constructor>> Circulo(radio : double, color : String)
+            +getRadio() : double
+            +getColor() : String
+            +getArea() : double
+            +toString() : String
+        }
+        class ExecEj1 {
+            {static}+a()
+            {static}+b()
+            {static}+c()
+            {static}+d()
+        }
+
+        tarea.ejercicio_1.ExecEj1 ..> Cilindro : cilindro
+        tarea.ejercicio_1.ExecEj1 ..> Cilindro : cilindro
+        tarea.ejercicio_1.ExecEj1 ..> Cilindro : cilindro
+        tarea.ejercicio_1.ExecEj1 ..> Cilindro : cilindro
+    }
+
+    package ejercicio_2 {
+        class Estudiante {
+            -fechaIngreso : int
+            -cuota : double
+            -carrera : String
+            +<<constructor>> Estudiante()
+            +<<constructor>> Estudiante(dni : String, nombre : String, apellido : String, email : String, direccion : String, fechaIngreso : int, cuota : double, carrera : String)
+            +getIngreso() : int
+            +getCuota() : double
+            +getCarrera() : String
+            +toString() : String
+        }
+        class ExecEj2 {
+            uno : Estudiante
+            dos : Estudiante
+            tres : Estudiante
+            cuatro : Estudiante
+            list : ArrayList<Estudiante>
+            sUno : Staff
+            sDos : Staff
+            sTres : Staff
+            sCuatro : Staff
+            list : ArrayList<Staff>
+            personas : ArrayList
+            cantEst : int = 0
+            ingresos : double = 0
+            {static}+a() : ArrayList<Estudiante>
+            {static}+b() : ArrayList<Staff>
+            {static}+c(estudiantes : ArrayList<Estudiante>, staff : ArrayList<Staff>) : ArrayList
+            {static}+d(lista : ArrayList) : int
+            {static}+e(lista : ArrayList) : double
+        }
+
+        tarea.ejercicio_2.ExecEj2 ..> java.util.ArrayList : lista
+        tarea.ejercicio_2.ExecEj2 ..> Estudiante : uno
+        tarea.ejercicio_2.ExecEj2 ..> Estudiante : dos
+        tarea.ejercicio_2.ExecEj2 ..> Estudiante : tres
+        tarea.ejercicio_2.ExecEj2 ..> Estudiante : cuatro
+        tarea.ejercicio_2.ExecEj2 ..> java.util.ArrayList : lista
+        tarea.ejercicio_2.ExecEj2 ..> Staff : sUno
+        tarea.ejercicio_2.ExecEj2 ..> Staff : sDos
+        tarea.ejercicio_2.ExecEj2 ..> Staff : sTres
+        tarea.ejercicio_2.ExecEj2 ..> Staff : sCuatro
+        tarea.ejercicio_2.ExecEj2 ..> java.util.ArrayList : personas
+
+        class Persona {
+            -dni : String
+            -nombre : String
+            -apellido : String
+            -email : String
+            -direccion : String
+            +<<constructor>> Persona()
+            +<<constructor>> Persona(dni : String, nombre : String, apellido : String, email : String, direccion : String)
+            +getDni() : String
+            +getNombre() : String
+            +getApellido() : String
+            +getEmail() : String
+            +getDireccion() : String
+            +toString() : String
+        }
+        class Staff {
+            -salario : int
+            -turno : char
+            <<constructor>> Staff()
+            <<constructor>> Staff(dni : String,  nombre : String,  apellido : String,  email : String,  direccion : String,  salario : int,  turno : char)
+            +getSalario() : int
+            +getTurno() : double
+            +toString() : String
+        }
+    }
+
+    package ejercicio_3 {
+        class Cuadrado {
+            -ladoLong : double
+            +<<constructor>> Cuadrado()
+            +<<constructor>> Cuadrado(ladoLong : double)
+            +<<constructor>> Cuadrado(ladoLong : double, color : String)
+            +getLadoLong() : double
+            +getArea() : double
+            +getPerimetro() : double
+            +toString() : String
+        }
+        class ExecEj3 {
+            lista : ArrayList
+            rect1 : Rectangulo
+            rect2 : Rectangulo
+            rect3 : Rectangulo
+            circ1 : Circulo
+            circ2 : Circulo
+            circ3 : Circulo
+            cuad1 : Cuadrado
+            cuad2 : Cuadrado
+            cuad3 : Cuadrado
+            {static}+a() : ArrayList
+            {static}+b(lista : ArrayList) : ArrayList
+            {static}+c(lista : ArrayList)
+        }
+
+        tarea.ejercicio_3.ExecEj3 ..> java.util.ArrayList : lista
+        tarea.ejercicio_3.ExecEj3 ..> Rectangulo : rect1
+        tarea.ejercicio_3.ExecEj3 ..> Rectangulo : rect2
+        tarea.ejercicio_3.ExecEj3 ..> Rectangulo : rect3
+        tarea.ejercicio_3.ExecEj3 ..> Circulo : circ1
+        tarea.ejercicio_3.ExecEj3 ..> Circulo : circ2
+        tarea.ejercicio_3.ExecEj3 ..> Circulo : circ3
+        tarea.ejercicio_3.ExecEj3 ..> Cuadrado : cuad1
+        tarea.ejercicio_3.ExecEj3 ..> Cuadrado : cuad2
+        tarea.ejercicio_3.ExecEj3 ..> Cuadrado : cuad3
+        abstract class Figura {
+            -color : String
+            +<<constructor>> Figura()
+            +<<constructor>> Figura(color : String)
+            +getColor() : String
+            +{abstract}getArea() : double
+            +{abstract}getPerimetro() : double
+        }
+        class Rectangulo {
+            -alto : double
+            -largo : double
+            +<<constructor>> Rectangulo()
+            +<<constructor>> Rectangulo(alto : double, largo : double)
+            +<<constructor>> Rectangulo(color : String, alto : double, largo : double)
+            +getAlto() : double
+            +getLargo() : double
+            +getArea() : double
+            +getPerimetro() : double
+            +toString() : String
+        }
+    }
+}
+
+App *--> Scanner : scan
+App *--> ArrayList : estudiantes
+App *--> ArrayList : staff
+App *--> ArrayList : personas
+App *--> ArrayList : figuras
+Circulo <|- Cilindro
+Circulo *--> DecimalFormat : df
+Persona <|- Estudiante
+Persona <|- Staff
+Figura <|- Circulo
+Figura <|- Cuadrado
+Figura <|- Rectangulo
+
+@enduml

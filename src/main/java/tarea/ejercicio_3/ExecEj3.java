@@ -36,11 +36,9 @@ public class ExecEj3 {
     }
 
     public static void c(ArrayList<Figura> lista) {
-        
         for (Figura figura : lista) {
             System.out.println(figura.toString());
         }
-
     }
 
 }
